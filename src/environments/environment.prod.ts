@@ -1,3 +1,7 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl: 'http://127.0.0.1:8080',
+  clientUrl: 'http://127.0.0.1:8080',
+
+  USER_TYPE_ADMIN: 1000
 };
