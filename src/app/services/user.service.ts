@@ -19,4 +19,8 @@ export class UserService {
   loginUser(data: any){
     return this.http.post(`${environment.apiUrl}/api/user/login`, data)
   }
+
+  isAuthenticatedUse(token: string){
+    return this.http.get(`${environment.apiUrl}/api/user/isAuthenticated?token=${token}`)
+  }
 }

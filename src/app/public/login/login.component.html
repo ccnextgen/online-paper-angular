@@ -1,5 +1,5 @@
 
-<div style="width: 25%;"  >
+<div *ngIf="!isLogged" style="width: 25%;">
     <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
@@ -10,8 +10,14 @@
             <input type="password" class="form-control" formControlName="password" placeholder="Password">
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
-        <button type="button" class="btn btn-primary">
+        <!-- <button type="button" class="btn btn-primary">
             <a routerLink="/signup" style="color: aliceblue;">Signup</a>
-        </button>
+        </button> -->
+        <button type="submit" class="btn btn-primary" routerLink="/signup">Signup</button>
     </form>
+</div>
+
+<div *ngIf="isLogged">
+    <button type="submit" class="btn btn-primary" routerLink="/postAd">Post Free Add</button>
+    <button type="submit" class="btn btn-primary" routerLink="">Vehicle List</button>
 </div>

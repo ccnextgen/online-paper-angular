@@ -27,7 +27,12 @@ export class SignupComponent implements OnInit {
     let userDetails =  this.signupForm.value
     userDetails.userType = 1000
     console.log(userDetails)
-    this.userService.registerUser(userDetails).subscribe((res) => {
+    this.userService.registerUser(userDetails).subscribe((res: any) => {
+      localStorage.setItem('token', res.token)
+      localStorage.setItem('refreshToken', res.refreshToken)
+      localStorage.setItem('userType', res.userType)
+      localStorage.setItem('email', res.email)
+      localStorage.setItem('name', res.name)
       this.signupForm.reset({})
       console.log(res)
     })

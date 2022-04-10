@@ -1,0 +1,7 @@
+<div *ngIf="!isAuthenticatedUser">
+    <app-login></app-login>
+</div>
+
+<div *ngIf="isAuthenticatedUser">
+    <p>User Authenticated</p>
+</div>

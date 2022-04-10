@@ -11,6 +11,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ItemListComponent } from './public/item-list/item-list.component';
+import { PostItemComponent } from './authenticated/post-item/post-item.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     SignupComponent,
     NavBarComponent,
     SideBarComponent,
-    FooterComponent
+    FooterComponent,
+    ItemListComponent,
+    PostItemComponent
   ],
   imports: [
     BrowserModule,
