@@ -1,1 +1,30 @@
-<p>item-list works!</p>
+<!-- <div class="card-group" style="width: 80%; padding-top: 30px; padding-bottom: 30px;">
+    <div  *ngFor="for let item of itemList" class="flex-item">
+        <img class="card-img-top" src="https://images.freeimages.com/images/large-previews/76e/abstract-1-1174741.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{item.vehicleMake}}</h5>
+            <p class="card-text">{{item.vehicleModel}}</p>
+        </div>
+    </div>
+</div> -->
+<div class="content" style="position: relative; top: 100px;">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of itemList" >
+            <mat-card class="mat-elevation-z4">
+                <!-- <mat-card-header>
+                    <mat-card-title>Mountains {{item.vehicleMake}}</mat-card-title>
+                </mat-card-header> -->
+                <img mat-card-image src="{{item.imageUrls[0]}}" routerLink="/item/{{item.id}}" style="cursor: pointer;">
+                <mat-card-content routerLink="/item/{{item.id}}" style="cursor: pointer;">
+                    <p>
+                       {{item.vehicleMake}} - {{item.vehicleModel}}
+                    </p>
+                </mat-card-content>
+                <!-- <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions> -->
+            </mat-card>
+        </div>
+    </div>
+</div>

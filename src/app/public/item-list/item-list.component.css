@@ -1,0 +1,32 @@
+/* .flex-item {
+    flex: 25%;
+}
+
+@media (max-width: 800px) {
+    .flex-item {
+        flex: 50%;
+    }
+}
+
+@media (max-width: 400px) {
+    .flex-item {
+        flex: 100%;
+    }
+  } */
+
+mat-toolbar {
+    justify-content: space-between;
+}
+
+.content {
+    padding: 16px;
+}
+
+.content > mat-card {
+    margin-bottom: 16px;
+}
+
+.column-label {
+    margin-right: 8px;
+    font-size: 1rem;
+}

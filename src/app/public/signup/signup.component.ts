@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { CommonService } from 'src/app/services/common.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -12,11 +13,14 @@ export class SignupComponent implements OnInit {
   signupForm = new FormGroup({
     name: new FormControl(''),
     email: new FormControl(''),
+    phoneNumber: new FormControl(''),
+    city: new FormControl(''),
     password: new FormControl(''),
   })
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private commonService: CommonService
   ) { }
 
   ngOnInit(): void {
@@ -35,7 +39,14 @@ export class SignupComponent implements OnInit {
       localStorage.setItem('name', res.name)
       this.signupForm.reset({})
       console.log(res)
+      this.sendMessage()
     })
+  }
+
+
+  sendMessage(): void {
+    // send message to subscribers via observable subject
+    this.commonService.sendUpdate('');
   }
 
 }

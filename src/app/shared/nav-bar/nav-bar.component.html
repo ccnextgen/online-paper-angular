@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+<nav class="navbar navbar-dark bg-dark navbar-expand-sm bk" style="position: fixed; width: 100%;">
   <a class="navbar-brand" routerLink="">GANU DENU</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -12,10 +12,13 @@
       <li class="nav-item">
         <div><a  class="nav-link" routerLink="postAd">Post Free Ad</a></div>
       </li>
-      <li class="nav-item">
+      <li *ngIf="!isAuthenticatedUser" class="nav-item">
         <a class="nav-link" routerLink="login">login</a>
       </li>
-      <li class="nav-item">
+      <li *ngIf="isAuthenticatedUser" class="nav-item">
+        <a class="nav-link" routerLink="/login" (click)="logout()">Logout</a>
+      </li>
+      <li *ngIf="!isAuthenticatedUser" class="nav-item">
         <a class="nav-link" routerLink="signup">Register</a>
       </li>
     </ul>

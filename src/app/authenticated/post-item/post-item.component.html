@@ -2,6 +2,136 @@
     <app-login></app-login>
 </div>
 
-<div *ngIf="isAuthenticatedUser">
-    <p>User Authenticated</p>
+<div class="container" *ngIf="isAuthenticatedUser && !isItemPosted">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h2>Vehicle Detail</h2>
+                    <h6>Please Enter Vehicle Details</h6>
+                </div>
+                <form [formGroup]="itemPostForm" (ngSubmit)="itemPost()">
+                    <div class="form-group">
+                        <label>Contact Name</label>
+                        <input type="text" class="form-control" formControlName="contactName"
+                            placeholder="Enter Contact Name">
+                    </div>
+                    <div class="form-group">
+                        <label>phone Number</label>
+                        <input type="email" class="form-control" formControlName="phoneNumber"
+                            placeholder="Enter phone Number">
+                    </div>
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" class="form-control" formControlName="city" placeholder="Enter city">
+                    </div>
+                    <div class="form-group">
+                        <label>Vehicle Type</label>
+                        <input type="text" class="form-control" formControlName="vehicleType"
+                            placeholder="Enter vehicle Type">
+                    </div>
+                    <div class="form-group">
+                        <label>vehicle Condition</label>
+                        <input type="text" class="form-control" formControlName="vehicleCondition"
+                            placeholder="Enter vehicle Condition">
+                    </div>
+                    <div class="form-group">
+                        <label>vehicle Make</label>
+                        <input type="text" class="form-control" formControlName="vehicleMake"
+                            placeholder="Enter vehicle Make">
+                    </div>
+                    <div class="form-group">
+                        <label>vehicle Model</label>
+                        <input type="text" class="form-control" formControlName="vehicleModel"
+                            placeholder="Enter vehicle Model">
+                    </div>
+                    <div class="form-group">
+                        <label>vehicle Condition</label>
+                        <input type="n" class="form-control" formControlName="vehicleCondition"
+                            placeholder="Enter vehicle Condition">
+                    </div>
+                    <div class="form-group">
+                        <label>manufactured Year</label>
+                        <input type="text" class="form-control" formControlName="manufacturedYear"
+                            placeholder="Enter manufactured Year">
+                    </div>
+                    <div class="form-group">
+                        <label>price</label>
+                        <input type="text" class="form-control" formControlName="price" placeholder="Enter price">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>engine Capacity</label>
+                        <input type="text" class="form-control" formControlName="engineCapacity"
+                            placeholder="Enter engineCapacity">
+                    </div>
+                    <div class="form-group">
+                        <label>mileage</label>
+                        <input type="text" class="form-control" formControlName="mileage" placeholder="Enter mileage">
+                    </div>
+                    <div class="form-group">
+                        <label>options</label>
+                        <div *ngFor="let feature of additionalCarFeatures">
+                            <input type="checkbox" (change)="onChange(feature.value, $event)" />
+                            <label>{{feature.value}}</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>price</label>
+                        <input type="text" class="form-control" formControlName="price" placeholder="Enter price">
+                    </div>
+                    <div class="form-group">
+                        <label>additional Info</label>
+                        <input type="text" class="form-control" formControlName="additionalInfo"
+                            placeholder="Enter additionalInfo">
+                    </div>
+                    <div class="form-group">
+                        <label>transmission Type</label>
+                        <!-- <input type="text" class="form-control" formControlName="transmissionType"
+                            placeholder="Enter transmission Type"> -->
+                        <div>
+                            <select formControlName="transmissionType">
+                                <option value="">Choose Transmission</option>
+                                <option *ngFor="let type of transmissionTypes">{{type.value}}</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label>fuel Type</label>
+                        <!-- <input type="text" class="form-control" formControlName="fuelType"
+                            placeholder="Enter fuel Type"> -->
+                        <div>
+                            <select formControlName="fuelType">
+                                <option value="">Choose Fuel Type</option>
+                                <option *ngFor="let type of fuelTypes">{{type.value}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>image Urls</label>
+                        <input type="text" class="form-control" formControlName="imageUrls"
+                            placeholder="Enter image Urls">
+                    </div>
+                    <!-- <div class="form-group">
+                        <label>image Urls</label>
+                        <input type="image" class="form-control" formControlName="imageUrls"
+                            placeholder="Enter image Urls">
+                    </div> -->
+
+                    <button type="submit" class="btn btn-primary">Add Vehicle</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- <div style="width: 25%;"> -->
+
+
+    <!-- </div> -->
+</div>
+
+<div *ngIf="isAuthenticatedUser && isItemPosted">
+    <app-item-list></app-item-list>
 </div>

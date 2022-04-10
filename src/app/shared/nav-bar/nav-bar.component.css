@@ -1,0 +1,6 @@
+.bk{
+    background: hsla(205, 46%, 30%, 1);
+    background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 39%, 26%, 1) 100%);
+    color: aliceblue;
+    z-index: 1;
+}

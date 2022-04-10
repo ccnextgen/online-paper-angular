@@ -13,6 +13,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ItemListComponent } from './public/item-list/item-list.component';
 import { PostItemComponent } from './authenticated/post-item/post-item.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { ItemComponent } from './public/item/item.component';
+import { ResetPasswordComponent } from './public/reset-password/reset-password.component';
+
 
 @NgModule({
   declarations: [
@@ -23,14 +31,21 @@ import { PostItemComponent } from './authenticated/post-item/post-item.component
     SideBarComponent,
     FooterComponent,
     ItemListComponent,
-    PostItemComponent
+    PostItemComponent,
+    ItemComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatButtonModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
